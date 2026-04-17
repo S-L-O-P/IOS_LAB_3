@@ -253,12 +253,11 @@ $
 Временная диаграмма этой передачи строится по правилу: каждый
 бит = `LOW` ≈ 54 мкс + `HIGH` ≈ 28 мкс (для "0") или ≈ 75 мкс (для "1").
 
-// TODO: вставь сюда самостоятельно нарисованную диаграмму
-// (например, в WaveDrom, draw.io или Inkscape).
-// #figure(
-//   image("diagrams/dht11_custom_value.svg", width: 100%),
-//   caption: [Временная диаграмма передачи RH = 55 %, T = 23,5 °C],
-// ) <fig:dht11-custom>
+
+#figure(
+  image("screenshots/dht11_custom_value.svg", width: 100%),
+  caption: [Временная диаграмма передачи RH = 55 %, T = 23,5 °C],
+) <fig:dht11-custom>
 
 == Оценка скорости интерфейса
 
