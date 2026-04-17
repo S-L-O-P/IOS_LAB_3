@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 55 1200 485" font-family="monospace" font-size="13">
+  <rect y="55" width="1200" height="485" fill="white"/>
+
+  <text x="35" y="110" font-weight="bold" fill="#b8860b">CS</text>
+  <text x="35" y="210" font-weight="bold" fill="#2e7d32">SCK</text>
+  <text x="35" y="340" font-weight="bold" fill="#c62828">MOSI</text>
+  <text x="35" y="470" font-weight="bold" fill="#1565c0">MISO</text>
+
+  <text x="75" y="85" font-size="10" fill="#888">H</text>
+  <text x="75" y="135" font-size="10" fill="#888">L</text>
+  <text x="75" y="175" font-size="10" fill="#888">H</text>
+  <text x="75" y="225" font-size="10" fill="#888">L</text>
+  <text x="75" y="305" font-size="10" fill="#888">H</text>
+  <text x="75" y="355" font-size="10" fill="#888">L</text>
+  <text x="75" y="435" font-size="10" fill="#888">H</text>
+  <text x="75" y="485" font-size="10" fill="#888">L</text>
+
+  <line x1="130" y1="60" x2="130" y2="540" stroke="#ddd" stroke-dasharray="3,3"/>
+  <line x1="386" y1="60" x2="386" y2="540" stroke="#ddd" stroke-dasharray="3,3"/>
+  <line x1="642" y1="60" x2="642" y2="540" stroke="#ddd" stroke-dasharray="3,3"/>
+  <line x1="898" y1="60" x2="898" y2="540" stroke="#ddd" stroke-dasharray="3,3"/>
+  <line x1="1154" y1="60" x2="1154" y2="540" stroke="#ddd" stroke-dasharray="3,3"/>
+
+  <text x="258" y="70" text-anchor="middle" font-size="11" fill="#555">Байт 1 (команда)</text>
+  <text x="514" y="70" text-anchor="middle" font-size="11" fill="#555">Байт 2 (temp_msb)</text>
+  <text x="770" y="70" text-anchor="middle" font-size="11" fill="#555">Байт 3 (temp_lsb)</text>
+  <text x="1026" y="70" text-anchor="middle" font-size="11" fill="#555">Байт 4 (temp_xlsb)</text>
+
+  <!-- CS -->
+  <path d="M 80,80 L 110,80 L 110,130 L 1170,130 L 1170,80 L 1185,80"
+        stroke="#b8860b" stroke-width="2" fill="none"/>
+  <text x="110" y="160" text-anchor="middle" font-size="10" fill="#b8860b">CS↓ start</text>
+  <text x="1170" y="160" text-anchor="middle" font-size="10" fill="#b8860b">CS↑ stop</text>
+
+  <!-- SCK -->
+  <g stroke="#2e7d32" stroke-width="2" fill="none">
+    <path d="M 80,220 L 130,220"/>
+    <path d="M 130,220 L 130,170 L 146,170 L 146,220 L 162,220 L 162,170 L 178,170 L 178,220 L 194,220 L 194,170 L 210,170 L 210,220 L 226,220 L 226,170 L 242,170 L 242,220 L 258,220 L 258,170 L 274,170 L 274,220 L 290,220 L 290,170 L 306,170 L 306,220 L 322,220 L 322,170 L 338,170 L 338,220 L 354,220 L 354,170 L 370,170 L 370,220 L 386,220"/>
+    <path d="M 386,220 L 386,170 L 402,170 L 402,220 L 418,220 L 418,170 L 434,170 L 434,220 L 450,220 L 450,170 L 466,170 L 466,220 L 482,220 L 482,170 L 498,170 L 498,220 L 514,220 L 514,170 L 530,170 L 530,220 L 546,220 L 546,170 L 562,170 L 562,220 L 578,220 L 578,170 L 594,170 L 594,220 L 610,220 L 610,170 L 626,170 L 626,220 L 642,220"/>
+    <path d="M 642,220 L 642,170 L 658,170 L 658,220 L 674,220 L 674,170 L 690,170 L 690,220 L 706,220 L 706,170 L 722,170 L 722,220 L 738,220 L 738,170 L 754,170 L 754,220 L 770,220 L 770,170 L 786,170 L 786,220 L 802,220 L 802,170 L 818,170 L 818,220 L 834,220 L 834,170 L 850,170 L 850,220 L 866,220 L 866,170 L 882,170 L 882,220 L 898,220"/>
+    <path d="M 898,220 L 898,170 L 914,170 L 914,220 L 930,220 L 930,170 L 946,170 L 946,220 L 962,220 L 962,170 L 978,170 L 978,220 L 994,220 L 994,170 L 1010,170 L 1010,220 L 1026,220 L 1026,170 L 1042,170 L 1042,220 L 1058,220 L 1058,170 L 1074,170 L 1074,220 L 1090,220 L 1090,170 L 1106,170 L 1106,220 L 1122,220 L 1122,170 L 1138,170 L 1138,220 L 1154,220"/>
+    <path d="M 1154,220 L 1185,220"/>
+  </g>
+
+  <!-- MOSI: 0xFA, 0xFF, 0xFF, 0xFF -->
+  <g stroke="#c62828" stroke-width="2" fill="none">
+    <path d="M 80,300 L 130,300"/>
+    <!-- 0xFA = 1,1,1,1,1,0,1,0: биты 7..3 HIGH, бит 2 LOW (290-322), бит 1 HIGH (322-354), бит 0 LOW (354-386) -->
+    <path d="M 130,300 L 290,300 L 290,350 L 322,350 L 322,300 L 354,300 L 354,350 L 386,350"/>
+    <!-- Переход на HIGH в начале байта 2 и держим до конца -->
+    <path d="M 386,350 L 386,300 L 1154,300"/>
+    <path d="M 1154,300 L 1185,300"/>
+  </g>
+
+  <g font-size="11" fill="#c62828" text-anchor="middle">
+    <text x="146" y="380">1</text><text x="178" y="380">1</text><text x="210" y="380">1</text><text x="242" y="380">1</text>
+    <text x="274" y="380">1</text><text x="306" y="380">0</text><text x="338" y="380">1</text><text x="370" y="380">0</text>
+    <text x="258" y="397" font-weight="bold">0xFA</text>
+    <text x="402" y="380">1</text><text x="434" y="380">1</text><text x="466" y="380">1</text><text x="498" y="380">1</text>
+    <text x="530" y="380">1</text><text x="562" y="380">1</text><text x="594" y="380">1</text><text x="626" y="380">1</text>
+    <text x="514" y="397" font-weight="bold">0xFF</text>
+    <text x="658" y="380">1</text><text x="690" y="380">1</text><text x="722" y="380">1</text><text x="754" y="380">1</text>
+    <text x="786" y="380">1</text><text x="818" y="380">1</text><text x="850" y="380">1</text><text x="882" y="380">1</text>
+    <text x="770" y="397" font-weight="bold">0xFF</text>
+    <text x="914" y="380">1</text><text x="946" y="380">1</text><text x="978" y="380">1</text><text x="1010" y="380">1</text>
+    <text x="1042" y="380">1</text><text x="1074" y="380">1</text><text x="1106" y="380">1</text><text x="1138" y="380">1</text>
+    <text x="1026" y="397" font-weight="bold">0xFF</text>
+  </g>
+
+  <!-- MISO: 0x00, 0x82, 0xC4, 0xC0 -->
+  <g stroke="#1565c0" stroke-width="2" fill="none">
+    <path d="M 80,430 L 130,430"/>
+    <!-- 0x00: все нули -->
+    <path d="M 130,430 L 130,480 L 386,480"/>
+    <!-- 0x82 = 1,0,0,0,0,0,1,0: b7 HIGH 386-418, LOW до 546, b1 HIGH 546-578, LOW 578-642 -->
+    <path d="M 386,480 L 386,430 L 418,430 L 418,480 L 546,480 L 546,430 L 578,430 L 578,480 L 642,480"/>
+    <!-- 0xC4 = 1,1,0,0,0,1,0,0: HIGH 642-706, LOW до 802, HIGH 802-834, LOW до 898 -->
+    <path d="M 642,480 L 642,430 L 706,430 L 706,480 L 802,480 L 802,430 L 834,430 L 834,480 L 898,480"/>
+    <!-- 0xC0 = 1,1,0,0,0,0,0,0: HIGH 898-962, LOW до 1154 -->
+    <path d="M 898,480 L 898,430 L 962,430 L 962,480 L 1154,480"/>
+    <path d="M 1154,480 L 1185,480"/>
+  </g>
+
+  <g font-size="11" fill="#1565c0" text-anchor="middle">
+    <text x="146" y="510">0</text><text x="178" y="510">0</text><text x="210" y="510">0</text><text x="242" y="510">0</text>
+    <text x="274" y="510">0</text><text x="306" y="510">0</text><text x="338" y="510">0</text><text x="370" y="510">0</text>
+    <text x="258" y="527" font-weight="bold">0x00</text>
+    <text x="402" y="510">1</text><text x="434" y="510">0</text><text x="466" y="510">0</text><text x="498" y="510">0</text>
+    <text x="530" y="510">0</text><text x="562" y="510">0</text><text x="594" y="510">1</text><text x="626" y="510">0</text>
+    <text x="514" y="527" font-weight="bold">0x82</text>
+    <text x="658" y="510">1</text><text x="690" y="510">1</text><text x="722" y="510">0</text><text x="754" y="510">0</text>
+    <text x="786" y="510">0</text><text x="818" y="510">1</text><text x="850" y="510">0</text><text x="882" y="510">0</text>
+    <text x="770" y="527" font-weight="bold">0xC4</text>
+    <text x="914" y="510">1</text><text x="946" y="510">1</text><text x="978" y="510">0</text><text x="1010" y="510">0</text>
+    <text x="1042" y="510">0</text><text x="1074" y="510">0</text><text x="1106" y="510">0</text><text x="1138" y="510">0</text>
+    <text x="1026" y="527" font-weight="bold">0xC0</text>
+  </g>
+
+</svg>
